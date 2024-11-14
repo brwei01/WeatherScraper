@@ -1,0 +1,75 @@
+2024/11/13-21:32:16.296 6354 Reusing MANIFEST D:\Dev\Scraper\WeatherScraper\selenium\AutomationProfile\Default\Local Storage\leveldb/MANIFEST-000001
+2024/11/13-21:32:16.300 6354 Recovering log #55
+2024/11/13-21:32:16.304 6354 Reusing old log D:\Dev\Scraper\WeatherScraper\selenium\AutomationProfile\Default\Local Storage\leveldb/000055.log 
+2024/11/13-21:32:52.393 6354 Level-0 table #60: started
+2024/11/13-21:32:52.406 6354 Level-0 table #60: 29134 bytes OK
+2024/11/13-21:32:52.413 6354 Delete type=0 #55
+2024/11/13-21:39:50.796 6354 Level-0 table #62: started
+2024/11/13-21:39:50.802 6354 Level-0 table #62: 31162 bytes OK
+2024/11/13-21:39:50.805 6354 Delete type=0 #59
+2024/11/13-21:43:43.419 6354 Level-0 table #64: started
+2024/11/13-21:43:43.430 6354 Level-0 table #64: 14657 bytes OK
+2024/11/13-21:43:43.434 6354 Delete type=0 #61
+2024/11/13-21:45:27.122 6354 Level-0 table #66: started
+2024/11/13-21:45:27.129 6354 Level-0 table #66: 17759 bytes OK
+2024/11/13-21:45:27.134 6354 Delete type=0 #63
+2024/11/13-21:45:27.135 6354 Compacting 4@0 + 1@1 files
+2024/11/13-21:45:27.146 6354 Generated table #67@0: 56 keys, 22670 bytes
+2024/11/13-21:45:27.146 6354 Compacted 4@0 + 1@1 files => 22670 bytes
+2024/11/13-21:45:27.151 6354 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/11/13-21:45:27.152 6354 Delete type=2 #57
+2024/11/13-21:45:27.152 6354 Delete type=2 #60
+2024/11/13-21:45:27.152 6354 Delete type=2 #62
+2024/11/13-21:45:27.152 6354 Delete type=2 #64
+2024/11/13-21:45:27.152 6354 Delete type=2 #66
+2024/11/13-21:49:27.030 6354 Level-0 table #69: started
+2024/11/13-21:49:27.035 6354 Level-0 table #69: 11507 bytes OK
+2024/11/13-21:49:27.039 6354 Delete type=0 #65
+2024/11/13-21:55:05.828 6354 Level-0 table #71: started
+2024/11/13-21:55:05.836 6354 Level-0 table #71: 139666 bytes OK
+2024/11/13-21:55:05.840 6354 Delete type=0 #68
+2024/11/13-22:04:39.614 6354 Level-0 table #73: started
+2024/11/13-22:04:39.622 6354 Level-0 table #73: 102527 bytes OK
+2024/11/13-22:04:39.626 6354 Delete type=0 #70
+2024/11/13-23:08:53.488 6354 Level-0 table #75: started
+2024/11/13-23:08:53.493 6354 Level-0 table #75: 35349 bytes OK
+2024/11/13-23:08:53.497 6354 Delete type=0 #72
+2024/11/13-23:08:53.497 6354 Compacting 4@0 + 1@1 files
+2024/11/13-23:08:53.504 6354 Generated table #76@0: 60 keys, 25831 bytes
+2024/11/13-23:08:53.505 6354 Compacted 4@0 + 1@1 files => 25831 bytes
+2024/11/13-23:08:53.508 6354 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/11/13-23:08:53.509 6354 Delete type=2 #67
+2024/11/13-23:08:53.509 6354 Delete type=2 #69
+2024/11/13-23:08:53.509 6354 Delete type=2 #71
+2024/11/13-23:08:53.509 6354 Delete type=2 #73
+2024/11/13-23:08:53.509 6354 Delete type=2 #75
+2024/11/13-23:29:57.948 6354 Level-0 table #78: started
+2024/11/13-23:29:57.955 6354 Level-0 table #78: 27413 bytes OK
+2024/11/13-23:29:57.958 6354 Delete type=0 #74
+2024/11/13-23:33:19.377 6354 Level-0 table #80: started
+2024/11/13-23:33:19.384 6354 Level-0 table #80: 19468 bytes OK
+2024/11/13-23:33:19.387 6354 Delete type=0 #77
+2024/11/13-23:35:33.612 6354 Level-0 table #82: started
+2024/11/13-23:35:33.622 6354 Level-0 table #82: 26632 bytes OK
+2024/11/13-23:35:33.627 6354 Delete type=0 #79
+2024/11/13-23:37:59.774 6354 Level-0 table #84: started
+2024/11/13-23:37:59.783 6354 Level-0 table #84: 14672 bytes OK
+2024/11/13-23:37:59.789 6354 Delete type=0 #81
+2024/11/13-23:37:59.789 6354 Compacting 4@0 + 1@1 files
+2024/11/13-23:37:59.811 6354 Generated table #85@0: 63 keys, 14844 bytes
+2024/11/13-23:37:59.811 6354 Compacted 4@0 + 1@1 files => 14844 bytes
+2024/11/13-23:37:59.814 6354 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/11/13-23:37:59.815 6354 Delete type=2 #76
+2024/11/13-23:37:59.815 6354 Delete type=2 #78
+2024/11/13-23:37:59.816 6354 Delete type=2 #80
+2024/11/13-23:37:59.816 6354 Delete type=2 #82
+2024/11/13-23:37:59.816 6354 Delete type=2 #84
+2024/11/13-23:40:40.723 6354 Level-0 table #87: started
+2024/11/13-23:40:40.730 6354 Level-0 table #87: 33852 bytes OK
+2024/11/13-23:40:40.733 6354 Delete type=0 #83
+2024/11/13-23:42:41.872 6354 Level-0 table #89: started
+2024/11/13-23:42:41.879 6354 Level-0 table #89: 18796 bytes OK
+2024/11/13-23:42:41.886 6354 Delete type=0 #86
+2024/11/13-23:46:48.837 6354 Level-0 table #91: started
+2024/11/13-23:46:48.843 6354 Level-0 table #91: 16479 bytes OK
+2024/11/13-23:46:48.846 6354 Delete type=0 #88
