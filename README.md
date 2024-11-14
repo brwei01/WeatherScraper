@@ -24,8 +24,8 @@
 ### 1. how to run
 - `python main.py`
 ### 2. explaination
-- 1. Encrypt_e9OKk3qfXQqT.js dynamic return --> GET https://www.aqistudy.cn/html/city_realtime.php?v=2.3 to extract JS link request
-- 2. Decrypt encrypt_e9OKk3qfXQqT.js
+- 1. encrypt_e9OKk3qfXQqT.js dynamic return --> GET https://www.aqistudy.cn/html/city_realtime.php?v=2.3 to extract JS link request
+- 2. Decrypt the encrypted js file fetched on request.
 - 3. Supplement execution environment dependencies: https://www.aqistudy.cn/js/jquery.min.js?v=1.3 static return
 - 4. Extract encryption function name, data encryption parameter name, decryption function name
 - 5. Execute encryption function request
