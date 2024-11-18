@@ -5,6 +5,7 @@ import execjs
 import requests
 from loguru import logger
 from urllib.parse import urljoin
+import pandas as pd
 
 
 class AqiScraper(object):
@@ -12,6 +13,7 @@ class AqiScraper(object):
     def __init__(self):
         self.root_url = 'https://www.aqistudy.cn'
         self.session = requests.Session()
+        self.output_path = "output.txt"
         self.js_pattern_path = './js/encrypt_e9OKk3qfXQqT.js'
         self.js_pattern = self.read_js_pattern(self.js_pattern_path)
 
@@ -56,7 +58,7 @@ class AqiScraper(object):
         # get content from encrypted js file
         js_code_resp = requests.get(js_code_url, headers=headers)
         js_code = js_code_resp.content.decode('utf-8', 'ignore')
-        logger.info(f'{js_code}')
+        # logger.info(f'{js_code}')
 
         return js_code
 
@@ -82,7 +84,7 @@ class AqiScraper(object):
             else:
                 break
 
-        logger.info(f'\n{js_code}')
+        # logger.info(f'\n{js_code}')
         return js_code
 
     def get_all_js_code(self, js_code):
@@ -124,10 +126,10 @@ class AqiScraper(object):
         :return:
         """
         param_ret = all_js_code_compile.call(encrypt_func_name, method, parameters)
-        logger.info(f'Parameters: {param_name} {param_ret}')
+        # logger.info(f'Parameters: {param_name} {param_ret}')
 
         response_str = self.get_aqistudyapi_request(param_name, param_ret)
-        logger.info(f'Responses: {response_str}')
+        # logger.info(f'Responses: {response_str}')
         return response_str
 
     def get_aqistudyapi_request(self, param_name, param_ret):
@@ -152,7 +154,15 @@ class AqiScraper(object):
         response_dict = json.loads(ret)
         logger.info(response_dict)
         return response_dict
-
+    
+    def write_data(self, air_quality_data, weather_data):
+        air_quality_df = pd.DataFrame(air_quality_data['result']['data']['rows'])
+        weather_df = pd.DataFrame(weather_data['result']['data']['rows'])
+        merged_df = pd.merge(air_quality_df, weather_df, on='time')
+        logger.info(merged_df)
+        merged_df.to_csv(self.output_path, index=False, encoding='utf-8')
+        return
+        
     def run(self):
         js_code = self.get_js_code()
 
@@ -162,7 +172,6 @@ class AqiScraper(object):
 
         encrypt_func_name, param_name, decrypt_func_name = self.get_names(all_js_code)
 
-        method = "GETDETAIL" 
         parameters = {
             "city": "金华",
             "startTime": "2024-11-13 10:00:00",
@@ -170,9 +179,16 @@ class AqiScraper(object):
             "type": "HOUR"
         }
 
-        response_str = self.get_city_data(all_js_code_compile, encrypt_func_name, param_name, method, parameters)
-        
-        response_dict = self.decrypt_resp(all_js_code_compile, decrypt_func_name, response_str)
+        method1 = "GETDETAIL"
+        method2 = "GETCITYWEATHER"
+
+        air_quality_response = self.get_city_data(all_js_code_compile, encrypt_func_name, param_name, method1, parameters)
+        weather_response = self.get_city_data(all_js_code_compile, encrypt_func_name, param_name, method2, parameters)
+        air_quality_data = self.decrypt_resp(all_js_code_compile, decrypt_func_name, air_quality_response)
+        weather_data = self.decrypt_resp(all_js_code_compile, decrypt_func_name, weather_response)
+        self.write_data(air_quality_data, weather_data)
+
+
 
 
 if __name__ == '__main__':

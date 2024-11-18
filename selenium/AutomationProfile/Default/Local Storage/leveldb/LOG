@@ -1,0 +1,9 @@
+2024/11/18-11:31:41.570 5864 Reusing MANIFEST D:\Dev\Scraper\WeatherScraper\selenium\AutomationProfile\Default\Local Storage\leveldb/MANIFEST-000001
+2024/11/18-11:31:41.578 5864 Recovering log #3
+2024/11/18-11:31:41.589 5864 Reusing old log D:\Dev\Scraper\WeatherScraper\selenium\AutomationProfile\Default\Local Storage\leveldb/000003.log 
+2024/11/18-11:34:06.009 5864 Level-0 table #5: started
+2024/11/18-11:34:06.015 5864 Level-0 table #5: 47897 bytes OK
+2024/11/18-11:34:06.020 5864 Delete type=0 #3
+2024/11/18-12:03:06.005 5864 Level-0 table #7: started
+2024/11/18-12:03:06.013 5864 Level-0 table #7: 19616 bytes OK
+2024/11/18-12:03:06.019 5864 Delete type=0 #4
