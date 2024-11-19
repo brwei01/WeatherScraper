@@ -158,10 +158,33 @@ class AqiScraper(object):
     def write_data(self, air_quality_data, weather_data):
         air_quality_df = pd.DataFrame(air_quality_data['result']['data']['rows'])
         weather_df = pd.DataFrame(weather_data['result']['data']['rows'])
-        merged_df = pd.merge(air_quality_df, weather_df, on='time')
+        print(weather_df.dtypes)
+        
+        # 处理时间戳不一致
+        weather_df["time"] = pd.to_datetime(weather_df["time"])  # 确保时间列是 datetime 类型
+        air_quality_df["time"] = pd.to_datetime(air_quality_df["time"])
+        weather_df["time"] = weather_df["time"].dt.round("h")
+        print(weather_df.dtypes)
+
+        # 合并数据
+        merged_df = pd.merge_asof(
+            air_quality_df.sort_values("time"),
+            weather_df.sort_values("time"),
+            on="time",
+            direction="nearest"  # 根据最近的时间戳合并
+        )
+
+        '''
+        merged_df = pd.merge(
+                            air_quality_df, weather_df,
+                            on='time', 
+                            how='outer'
+                        )        
+        '''
+
         logger.info(merged_df)
         merged_df.to_csv(self.output_path, index=False, encoding='utf-8')
-        return
+        return 
         
     def run(self):
         js_code = self.get_js_code()
@@ -174,8 +197,8 @@ class AqiScraper(object):
 
         parameters = {
             "city": "金华",
-            "startTime": "2024-11-13 10:00:00",
-            "endTime": "2024-11-14 13:00:00",
+            "startTime": "2014-02-01 00:00:00",
+            "endTime": "2014-02-28 23:00:00",
             "type": "HOUR"
         }
 
@@ -187,9 +210,6 @@ class AqiScraper(object):
         air_quality_data = self.decrypt_resp(all_js_code_compile, decrypt_func_name, air_quality_response)
         weather_data = self.decrypt_resp(all_js_code_compile, decrypt_func_name, weather_response)
         self.write_data(air_quality_data, weather_data)
-
-
-
 
 if __name__ == '__main__':
     aqi_scraper = AqiScraper()
